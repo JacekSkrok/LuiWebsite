@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio [Imię Partnerki]</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Witaj, jestem [Imię Partnerki]</h1>
+        <p>Krótki opis o sobie.</p>
+    </header>
+
+    <section id="about">
+        <h2>O mnie</h2>
+        <p>Tutaj możesz dodać więcej informacji o sobie, swoich umiejętnościach, doświadczeniu itp.</p>
+        <!-- Miejsce na zdjęcie -->
+        <img src="placeholder.jpg" alt="Zdjęcie [Imię Partnerki]" style="max-width: 300px;">
+    </section>
+
+    <section id="portfolio">
+        <h2>Moje Dossier</h2>
+        <p>Opis projektów, osiągnięć itp.</p>
+        <!-- Tutaj można dodać więcej treści -->
+    </section>
+
+    <section id="collaboration">
+        <h2>Współpraca</h2>
+        <p>Szukam wsparcia w budowaniu kariery. Jeśli jesteś zainteresowany/a współpracą, skontaktuj się ze mną!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Kontakt</h2>
+        <form action="https://formspree.io/f/twoj-email" method="POST">
+            <label for="name">Imię:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Wiadomość:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Wyślij</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 [Imię Partnerki]</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
