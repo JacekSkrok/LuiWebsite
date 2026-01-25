@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <h1>Witaj, jestem [Imię Partnerki]</h1>
+        <h1>Witaj, jestem Luiza</h1>
         <p>Krótki opis o sobie.</p>
     </header>
 
@@ -32,7 +32,7 @@
 
     <section id="contact">
         <h2>Kontakt</h2>
-        <form action="https://formspree.io/f/twoj-email" method="POST">
+        <form id="contact-form">
             <label for="name">Imię:</label>
             <input type="text" id="name" name="name" required>
 
@@ -47,9 +47,10 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 [Imię Partnerki]</p>
+        <p>&copy; 2026 Luiza</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
