@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -28,6 +32,102 @@ nav a {
 nav a:hover {
     color: #023e8a;
 }
+
+/* hero banner */
+.hero {
+    background: url("assets/images/luiza.jpg") center/cover no-repeat;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+    position: relative;
+}
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* layout for about section */
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+.about-text {
+    flex: 1 1 400px;
+}
+.about-image {
+    flex: 1 1 300px;
+}
+.about-image img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* features cards adjusted earlier */
+
+/* button overrides for hero */
+.btn-primary {
+    background: #00b4d8;
+    color: #fff;
+    padding: 14px 28px;
+    font-size: 1rem;
+}
+.btn-primary:hover {
+    background: #0096c7;
+}
+
+/* navigation additional styling */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+nav a {
+    color: #006d77;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* add scroll padding to body for fixed nav */
+body {
+    padding-top: 60px;
+}
+
+.section-alt {
+    background: #f4f4f4;
+}
+
 
 /* hero banner */
 .hero {
