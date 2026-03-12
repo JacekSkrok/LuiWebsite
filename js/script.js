@@ -1,9 +1,5 @@
 import { publicKey, serviceId, templateId } from './config.js';
 
-// debug logs to confirm module loading and configuration
-console.log('script.js loaded');
-console.log('EmailJS configuration:', { publicKey, serviceId, templateId });
-
 // Flip cards (with debug)
 const cards = document.querySelectorAll('.feature-card');
 console.log('found', cards.length, 'feature cards');
@@ -25,8 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error initializing emailjs:', e);
     }
 })();
-
-
 
 // Form submission
 document.getElementById('contact-form').addEventListener('submit', function(event) {

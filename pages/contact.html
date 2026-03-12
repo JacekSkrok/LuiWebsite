@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - Luiza Skrok Career Coaching</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Strona główna</a></li>
+            <li><a href="about.html">O mnie</a></li>
+            <li><a href="services.html">Oferta</a></li>
+            <li><a href="collaboration.html">Jak pracuję</a></li>
+            <li><a href="hr.html">HR</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1>Kontakt</h1>
+        <p style="font-size: 1.1rem;">Masz pytania lub chcesz umówić konsultację? Skontaktuj się ze mną!</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; max-width: 1000px;">
+            <div style="background-color: #f5f5f5; padding: 1.5rem; border-radius: 8px;">
+                <h3 style="color: #006d77;">Dane kontaktowe</h3>
+                
+                <p>
+                    <strong>📧 Email:</strong><br>
+                    <a href="mailto:kontakt@luizaskrok.pl">kontakt@luizaskrok.pl</a>
+                </p>
+
+                <p>
+                    <strong>💬 Wiadomość:</strong><br>
+                    Możesz wysłać mi wiadomość poniżej w formularzu
+                </p>
+
+                <p>
+                    <strong>🌐 LinkedIn:</strong><br>
+                    <a href="https://www.linkedin.com/in/luiza-skrok" target="_blank">Luiza Skrok</a>
+                </p>
+
+                <p>
+                    <strong>📍 Lokalizacja:</strong><br>
+                    Warszawa, Polska
+                </p>
+
+                <h3 style="color: #006d77;">Dostępność</h3>
+                <p>Sesje online: Poniedziałek - Piątek, 17:00-20:00<br>
+                Sesje stacjonarne: Na umówienie<br>
+                <em>Odpowiadam na wiadomości zazwyczaj w ciągu 24 godzin</em></p>
+            </div>
+
+            <div>
+                <h3 style="color: #006d77;">Formularz kontaktowy</h3>
+                <form id="contact-form" style="background-color: #f5f5f5; padding: 1.5rem; border-radius: 8px;">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Imię i nazwisko:</label>
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">E-mail:</label>
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Temat:</label>
+                        <select id="subject" name="subject" required style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                            <option value="">-- Wybierz temat --</option>
+                            <option value="Rozmowa wstępna">Rozmowa wstępna</option>
+                            <option value="Konsultacja CV">Konsultacja CV</option>
+                            <option value="Przygotowanie do rozmowy">Przygotowanie do rozmowy rekrutacyjnej</option>
+                            <option value="Zmiana zawodowa">Strategia zmiany zawodowej</option>
+                            <option value="Inne pytanie">Inne pytanie</option>
+                        </select>
+                    </div>
+
+                    <div style="margin-bottom: 1rem;">
+                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Wiadomość:</label>
+                        <textarea id="message" name="message" required rows="5" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Wyślij wiadomość</button>
+                </form>
+            </div>
+        </div>
+
+        <h2>Zarezerwuj sesję online</h2>
+        <p>Chcesz zarezerwować konkretny termin? Możesz to zrobić tutaj (gdy będzie dostępny system rezerwacji).</p>
+        <!-- Tutaj można dodać link do Calendly lub innego systemu rezerwacji -->
+
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Luiza Skrok Career Coaching</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="module" src="../js/script.js"></script>
+</body>
+</html>
