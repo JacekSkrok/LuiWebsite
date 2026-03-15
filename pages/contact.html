@@ -22,8 +22,8 @@
         <h1>Kontakt</h1>
         <p style="font-size: 1.1rem;">Masz pytania lub chcesz umówić konsultację? Skontaktuj się ze mną!</p>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; max-width: 1000px;">
-            <div style="background-color: #f5f5f5; padding: 1.5rem; border-radius: 8px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0; max-width: 1000px;" class="contact-grid">
+            <div style="background-color: #f5f5f5; padding: 1.5rem; border-radius: 8px;" class="contact-info">
                 <h3 style="color: #006d77;">Dane kontaktowe</h3>
                 
                 <p>
@@ -57,17 +57,17 @@
                 <form id="contact-form" style="background-color: #f5f5f5; padding: 1.5rem; border-radius: 8px;">
                     <div style="margin-bottom: 1rem;">
                         <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Imię i nazwisko:</label>
-                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
                     </div>
 
                     <div style="margin-bottom: 1rem;">
                         <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">E-mail:</label>
-                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
                     </div>
 
                     <div style="margin-bottom: 1rem;">
                         <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Temat:</label>
-                        <select id="subject" name="subject" required style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                        <select id="subject" name="subject" required style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;">
                             <option value="">-- Wybierz temat --</option>
                             <option value="Rozmowa wstępna">Rozmowa wstępna</option>
                             <option value="Konsultacja CV">Konsultacja CV</option>
@@ -79,7 +79,7 @@
 
                     <div style="margin-bottom: 1rem;">
                         <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Wiadomość:</label>
-                        <textarea id="message" name="message" required rows="5" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                        <textarea id="message" name="message" required rows="5" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box;"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary" style="width: 100%;">Wyślij wiadomość</button>

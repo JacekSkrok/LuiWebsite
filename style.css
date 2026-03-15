@@ -9,26 +9,37 @@ body {
     line-height: 1.6;
     color: #303030;
     background-color: #fafafa;
+    padding-top: 60px;
 }
 
 /* navigation */
 nav {
     background: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
+
 nav ul {
     display: flex;
-    justify-content: center;
-    gap: 2rem;
+    justify-content: flex-end;
+    gap: 1.5rem;
     list-style: none;
     margin: 0;
-    padding: 0.75rem 0;
+    padding: 1rem;
+    flex-wrap: wrap;
 }
+
 nav a {
     color: #006d77;
     text-decoration: none;
     font-weight: 600;
+    font-size: 1rem;
 }
+
 nav a:hover {
     color: #023e8a;
 }
@@ -38,9 +49,10 @@ nav a:hover {
     background: url("assets/images/luiza.jpg") center/cover no-repeat;
     color: #fff;
     text-align: center;
-    padding: 120px 20px;
+    padding: 80px 20px;
     position: relative;
 }
+
 .hero::after {
     content: "";
     position: absolute;
@@ -51,16 +63,37 @@ nav a:hover {
     background: rgba(0, 0, 0, 0.4);
     z-index: 0;
 }
+
 .hero-content {
     position: relative;
     z-index: 1;
     max-width: 800px;
     margin: 0 auto;
 }
+
+.hero-logo {
+    margin-bottom: 0.25rem;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
+}
+
+.hero-logo img {
+    height: 2rem;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+}
+
+.hero-logo:hover {
+    opacity: 1;
+}
+
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
 }
+
 .hero p {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
@@ -71,57 +104,32 @@ nav a:hover {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
 }
+
 .about-text {
-    flex: 1 1 400px;
-}
-.about-image {
     flex: 1 1 300px;
 }
+
+.about-image {
+    flex: 1 1 250px;
+}
+
 .about-image img {
     width: 100%;
     border-radius: 8px;
 }
 
-/* features cards adjusted earlier */
-
-/* button overrides for hero */
+/* button styles */
 .btn-primary {
     background: #00b4d8;
     color: #fff;
     padding: 14px 28px;
     font-size: 1rem;
 }
+
 .btn-primary:hover {
     background: #0096c7;
-}
-
-/* navigation additional styling */
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-    margin: 0;
-    padding: 1rem 0;
-    background-color: #fff;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-nav a {
-    color: #006d77;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-/* add scroll padding to body for fixed nav */
-body {
-    padding-top: 60px;
 }
 
 .section-alt {
@@ -163,9 +171,17 @@ section {
 }
 
 .section-alt {
-    background: #e9ecef;
+    background: #f4f4f4;
 }
 
+/* sections general styling */
+section {
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+/* forms */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -174,29 +190,53 @@ form {
 label {
     display: block;
     margin-top: 10px;
+    font-weight: 600;
 }
 
-input, textarea {
+input, textarea, select {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
 }
 
-/* feature cards */
-.features {
-    display: grid;
-    /* always two columns for a 2x2 layout */
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: #006d77;
+    box-shadow: 0 0 5px rgba(0, 109, 119, 0.3);
 }
 
-.feature-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+/* buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background: #00b4d8;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: #0096c7;
+}
+
+.btn-secondary {
+    background: #006d77;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background: #004b57;
 }
 
 button {
@@ -207,12 +247,14 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #555;
 }
 
+/* blockquotes */
 blockquote {
     font-style: italic;
     border-left: 4px solid #00b4d8;
@@ -221,31 +263,35 @@ blockquote {
     padding-left: 16px;
 }
 
+/* footer */
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     background-color: #f4f4f4;
+    margin-top: 40px;
 }
 
+/* feature cards */
 .features {
     display: grid;
-    /* fixed two columns to keep cards in 2x2 arrangement */
     grid-template-columns: repeat(2, 1fr);
-    /* larger spacing horizontally and vertically */
-    gap: 60px;
-    /* padding around the grid so cards don't hug the edges */
-    padding: 20px 40px;
+    gap: 30px;
+    padding: 0;
 }
 
 .feature-card {
     perspective: 1000px;
     cursor: pointer;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
 .card-inner {
     position: relative;
     width: 100%;
-    height: 220px;
+    height: 240px;
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
@@ -265,18 +311,311 @@ footer {
     justify-content: center;
     text-align: center;
     padding: 20px;
-    border-radius: 12px;
+    box-sizing: border-box;
 }
 
 .card-front {
-    /* use header color for front of card, ensure text remains readable */
     background: #006d77;
     color: #fff;
 }
 
 .card-back {
-    /* match the header/hero color instead of black */
     background: #006d77;
     color: white;
     transform: rotateY(180deg);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablet and smaller screens (768px and below) */
+@media (max-width: 768px) {
+    body {
+        padding-top: 50px;
+    }
+
+    /* Navigation - adapt for smaller screens */
+    nav {
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    nav ul {
+        gap: 0.75rem;
+        padding: 0.5rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav a {
+        font-size: 0.85rem;
+    }
+
+    /* Hero section - reduce padding and font sizes */
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero-logo img {
+        height: 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Sections - reduce padding */
+    section {
+        padding: 30px 15px;
+        max-width: 100%;
+    }
+
+    /* About section - stack layout */
+    .about-container {
+        gap: 15px;
+    }
+
+    .about-text {
+        flex: 1 1 100%;
+        order: 1;
+    }
+
+    .about-image {
+        flex: 1 1 100%;
+        order: 2;
+    }
+
+    /* Feature cards - single column on tablet */
+    .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .card-inner {
+        height: 200px;
+    }
+
+    .card-front h3,
+    .card-back p {
+        font-size: 0.95rem;
+    }
+
+    /* Button sizing */
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Form improvements */
+    form {
+        max-width: 100%;
+    }
+
+    input, textarea, select {
+        padding: 10px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    /* Contact page grid */
+    [style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+    body {
+        padding-top: 45px;
+    }
+
+    /* Fixed nav adjustment */
+    nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        flex-wrap: wrap;
+    }
+
+    nav ul {
+        gap: 0.4rem;
+        padding: 0.4rem 0.25rem;
+        justify-content: center;
+        flex: 1 1 100%;
+    }
+
+    nav a {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.35rem;
+    }
+
+    /* Hero section */
+    .hero {
+        padding: 40px 10px;
+    }
+
+    .hero-logo img {
+        height: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    /* Sections */
+    section {
+        padding: 20px 10px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    section h1 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Typography adjustments */
+    p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+        display: block;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Features cards */
+    .features {
+        gap: 15px;
+    }
+
+    .card-inner {
+        height: 180px;
+    }
+
+    .card-front h3 {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    .card-back p {
+        font-size: 0.85rem;
+        padding: 15px;
+    }
+
+    /* Forms */
+    input, textarea, select {
+        padding: 12px 8px;
+        font-size: 16px;
+        margin-top: 8px;
+    }
+
+    label {
+        font-size: 0.95rem;
+        margin-top: 12px;
+    }
+
+    /* Lists */
+    ul, ol {
+        padding-left: 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    li {
+        margin-bottom: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+        padding: 15px 10px;
+        font-size: 0.85rem;
+    }
+
+    /* Inline styles fixes for contact page */
+    [style*="display: grid"], 
+    [style*="display: flex"] {
+        display: block !important;
+    }
+}
+
+/* Extra small devices (360px and below) */
+@media (max-width: 360px) {
+    nav a {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.15rem;
+    }
+
+    nav ul {
+        gap: 0.2rem;
+    }
+
+    .hero-logo img {
+        height: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero p {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Contact page grid responsive */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+/* Articles grid responsive */
+.articles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
 }
