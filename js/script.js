@@ -23,15 +23,22 @@ document.addEventListener('DOMContentLoaded', () => {
 })();
 
 // Form submission
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm) {
+        return;
+    }
 
-    emailjs.sendForm(serviceId, templateId, this)
-        .then(function() {
-            alert('Message sent successfully!');
-            document.getElementById('contact-form').reset();
-        }, function(error) {
-            alert('Error sending message: ' + JSON.stringify(error));
-        });
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        emailjs.sendForm(serviceId, templateId, this)
+            .then(function() {
+                alert('Message sent successfully!');
+                contactForm.reset();
+            }, function(error) {
+                alert('Error sending message: ' + JSON.stringify(error));
+            });
+    });
 });
 
