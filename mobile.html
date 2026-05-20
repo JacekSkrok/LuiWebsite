@@ -789,19 +789,19 @@ footer {
       <div id="formContainer">
         <div class="form-group">
           <label for="name">Imię i nazwisko</label>
-          <input type="text" id="name" placeholder="Jan Kowalski" autocomplete="name">
+          <input type="text" id="name" name="name" placeholder="Jan Kowalski" autocomplete="name">
         </div>
         <div class="form-group">
           <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="jan@example.com" autocomplete="email">
+          <input type="email" id="email" name="email" placeholder="jan@example.com" autocomplete="email">
         </div>
         <div class="form-group">
           <label for="linkedin">Link do LinkedIn <span style="font-weight:400;color:var(--brown)">(opcjonalnie)</span></label>
-          <input type="url" id="linkedin" placeholder="https://linkedin.com/in/...">
+          <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/...">
         </div>
         <div class="form-group">
           <label for="topic">Temat</label>
-          <select id="topic">
+          <select id="topic" name="subject">
             <option value="">-- Wybierz temat --</option>
             <option>Rozmowa wstępna</option>
             <option>Konsultacja CV</option>
@@ -812,9 +812,9 @@ footer {
         </div>
         <div class="form-group">
           <label for="message">Wiadomość</label>
-          <textarea id="message" placeholder="Napisz kilka słów o swojej sytuacji i czego potrzebujesz..."></textarea>
+          <textarea id="message" name="message" placeholder="Napisz kilka słów o swojej sytuacji i czego potrzebujesz..."></textarea>
         </div>
-        <button class="form-submit" onclick="submitForm()">Wyślij wiadomość</button>
+        <button class="form-submit" id="submitBtn" onclick="submitForm()">Wyślij wiadomość</button>
       </div>
       <div class="form-success" id="formSuccess">
         <div class="form-success-icon">✅</div>
@@ -835,6 +835,7 @@ footer {
 </nav>
 
 <div style="height:64px;"></div><!-- bottom nav spacer -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
 <footer>
   <p>© 2026 Luiza Skrok Career Coaching · <a href="mailto:lskrok.careerboost@gmail.com">lskrok.careerboost@gmail.com</a></p>
@@ -862,6 +863,8 @@ document.getElementById('hamburger').addEventListener('click', function() {
   document.getElementById('navMenu').classList.toggle('open');
 });
 
+emailjs.init('oUH67qMBAi_5_r1Qp');
+
 function submitForm() {
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -870,8 +873,24 @@ function submitForm() {
     alert('Wypełnij przynajmniej imię, e-mail i wiadomość.');
     return;
   }
-  document.getElementById('formContainer').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Wysyłanie...';
+
+  emailjs.send('service_ngv0okj', 'template_z9zbt99', {
+    name: name,
+    email: email,
+    linkedin: document.getElementById('linkedin').value.trim(),
+    subject: document.getElementById('topic').value,
+    message: message
+  }).then(function() {
+    document.getElementById('formContainer').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }, function(error) {
+    alert('Błąd wysyłania wiadomości. Spróbuj ponownie lub napisz bezpośrednio na lskrok.careerboost@gmail.com');
+    btn.disabled = false;
+    btn.textContent = 'Wyślij wiadomość';
+  });
 }
 
 // init bottom nav opacity
